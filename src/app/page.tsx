@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from 'react';
-import { Camera, TrendingUp, Target, Book, CheckCircle, Info, Leaf, Carrot } from 'lucide-react';
+import { Camera, TrendingUp, Target, Book, CheckCircle, Info, Leaf, Carrot, Sun } from 'lucide-react';
 import type { Measurement, RoutineItem, Goal } from '@/lib/types';
 
 import DashboardTab from '@/components/dashboard-tab';
@@ -100,6 +100,7 @@ export default function StrandPlanApp() {
     { id: 'tips', label: 'Tips', icon: Book },
     { id: 'remedies', label: 'Remedies', icon: Leaf },
     { id: 'foods', label: 'Foods', icon: Carrot },
+    { id: 'skin', label: 'Skin', icon: Sun },
   ];
 
   const renderContent = () => {
@@ -122,6 +123,10 @@ export default function StrandPlanApp() {
         // This will be handled by navigation, but as a fallback:
         window.location.href = '/foods';
         return null;
+      case 'skin':
+        // This will be handled by navigation, but as a fallback:
+        window.location.href = '/skin';
+        return null;
       default:
         return null;
     }
@@ -132,6 +137,8 @@ export default function StrandPlanApp() {
       window.location.href = '/remedies';
     } else if (tabId === 'foods') {
       window.location.href = '/foods';
+    } else if (tabId === 'skin') {
+      window.location.href = '/skin';
     } else {
       setActiveTab(tabId);
     }
