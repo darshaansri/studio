@@ -30,6 +30,12 @@ const remedies = [
     description: "Rosemary oil is believed to stimulate hair growth by improving circulation to the scalp. It's often compared to minoxidil for its effectiveness.",
     application: "Mix a few drops of rosemary essential oil with a carrier oil like coconut or jojoba oil. Massage it into your scalp and leave for at least 30 minutes before shampooing.",
     icon: <Leaf className="w-6 h-6 text-green-600" />
+  },
+  {
+    title: "Preventing Split Ends",
+    description: "Split ends occur when the hair shaft frays. While you can't repair them, you can prevent them with proper care and regular trims.",
+    application: "Get regular trims every 6-8 weeks, avoid excessive heat styling, and use a wide-tooth comb on wet hair to minimize breakage.",
+    icon: <Leaf className="w-6 h-6 text-green-600" />
   }
 ]
 
