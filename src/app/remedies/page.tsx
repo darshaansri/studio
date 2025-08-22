@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Leaf } from "lucide-react";
+import { ArrowLeft, Leaf, Droplets } from "lucide-react";
 import { StrandPlanIcon } from "@/components/icons";
 
 const remedies = [
@@ -36,6 +36,12 @@ const remedies = [
     description: "Split ends occur when the hair shaft frays. While you can't repair them, you can prevent them with proper care and regular trims.",
     application: "Get regular trims every 6-8 weeks, avoid excessive heat styling, and use a wide-tooth comb on wet hair to minimize breakage.",
     icon: <Leaf className="w-6 h-6 text-green-600" />
+  },
+  {
+    title: "Proper Hair Washing",
+    description: "Washing your hair correctly can prevent damage and keep your scalp healthy, which is crucial for hair growth.",
+    application: "Use lukewarm water. Wet hair, apply shampoo to the scalp, and massage gently. Rinse thoroughly. Apply conditioner mainly to the ends, leave for a few minutes, then rinse with cool water to seal the cuticle.",
+    icon: <Droplets className="w-6 h-6 text-blue-500" />
   }
 ]
 
