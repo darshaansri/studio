@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import type { Measurement, RoutineItem } from '@/lib/types';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Droplets, Pill, Scissors, Sparkles, Lightbulb, GlassWater, Heart } from 'lucide-react';
+import { Droplets, Pill, Scissors, Sparkles, Lightbulb, GlassWater, Heart, Hand } from 'lucide-react';
 import { getPersonalizedAdvice } from '@/lib/actions';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -15,9 +15,9 @@ interface TipsTabProps {
 
 const staticTips = [
   {
-    title: "Scalp Health",
-    content: "Massage your scalp for 5-10 minutes daily to improve blood circulation and stimulate hair follicles.",
-    icon: <Droplets className="w-5 h-5 text-primary" />,
+    title: "Scalp Massage",
+    content: "Use your fingertips to gently massage your scalp for 5-10 minutes daily. This improves blood circulation and can stimulate hair follicles.",
+    icon: <Hand className="w-5 h-5 text-primary" />,
     color: "primary"
   },
   {
