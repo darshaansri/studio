@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from 'react';
-import { Camera, TrendingUp, Target, Book, CheckCircle, Info } from 'lucide-react';
+import { Camera, TrendingUp, Target, Book, CheckCircle, Info, Leaf } from 'lucide-react';
 import type { Measurement, RoutineItem, Goal } from '@/lib/types';
 
 import DashboardTab from '@/components/dashboard-tab';
@@ -98,6 +98,7 @@ export default function StrandPlanApp() {
     { id: 'routine', label: 'Routine', icon: CheckCircle },
     { id: 'goals', label: 'Goals', icon: Target },
     { id: 'tips', label: 'Tips', icon: Book },
+    { id: 'remedies', label: 'Remedies', icon: Leaf },
   ];
 
   const renderContent = () => {
@@ -112,10 +113,23 @@ export default function StrandPlanApp() {
         return <GoalsTab goals={goals} />;
       case 'tips':
         return <TipsTab measurements={measurements} routine={routine} />;
+      case 'remedies':
+        // This will be handled by navigation, but as a fallback:
+        window.location.href = '/remedies';
+        return null;
       default:
         return null;
     }
   };
+  
+  const handleTabClick = (tabId: string) => {
+    if (tabId === 'remedies') {
+      window.location.href = '/remedies';
+    } else {
+      setActiveTab(tabId);
+    }
+  }
+
 
   return (
     <div className="min-h-screen bg-background font-body flex items-center justify-center p-4">
@@ -163,8 +177,8 @@ export default function StrandPlanApp() {
             <Button
               key={tab.id}
               variant="ghost"
-              onClick={() => setActiveTab(tab.id)}
-              className={`flex flex-col items-center h-auto py-2 px-3 rounded-xl transition-all duration-300 w-1/5
+              onClick={() => handleTabClick(tab.id)}
+              className={`flex flex-col items-center h-auto py-2 px-3 rounded-xl transition-all duration-300 w-1/6
                 ${activeTab === tab.id 
                   ? 'bg-gradient-to-r from-primary/20 to-accent/20 text-primary font-bold' 
                   : 'text-muted-foreground hover:bg-secondary'
