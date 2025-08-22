@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import type { Measurement, RoutineItem } from '@/lib/types';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Droplets, Pill, Scissors, Sparkles, Lightbulb } from 'lucide-react';
+import { Droplets, Pill, Scissors, Sparkles, Lightbulb, GlassWater, Heart } from 'lucide-react';
 import { getPersonalizedAdvice } from '@/lib/actions';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -31,6 +31,24 @@ const staticTips = [
     content: "Minimize heat styling and use silk pillowcases to reduce friction and breakage.",
     icon: <Scissors className="w-5 h-5 text-accent" />,
     color: "accent"
+  },
+  {
+    title: "Hydration",
+    content: "Drink plenty of water to keep your hair and scalp hydrated from the inside out.",
+    icon: <GlassWater className="w-5 h-5 text-blue-500" />,
+    color: "blue-500"
+  },
+  {
+    title: "Regular Trims",
+    content: "Get regular trims every 6-8 weeks to remove split ends and prevent them from traveling up the hair shaft.",
+    icon: <Scissors className="w-5 h-5 text-purple-500" />,
+    color: "purple-500"
+  },
+  {
+    title: "Stress Management",
+    content: "High stress levels can contribute to hair loss. Practice relaxation techniques like yoga or meditation.",
+    icon: <Heart className="w-5 h-5 text-red-500" />,
+    color: "red-500"
   }
 ];
 
