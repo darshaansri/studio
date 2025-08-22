@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from 'react';
-import { Camera, TrendingUp, Target, Book, CheckCircle, Info, Leaf, Carrot, Sun } from 'lucide-react';
+import { Camera, TrendingUp, Target, Book, CheckCircle, Info, Leaf, Carrot, Sun, Hand } from 'lucide-react';
 import type { Measurement, RoutineItem, Goal } from '@/lib/types';
 
 import DashboardTab from '@/components/dashboard-tab';
@@ -101,6 +101,7 @@ export default function StrandPlanApp() {
     { id: 'remedies', label: 'Remedies', icon: Leaf },
     { id: 'foods', label: 'Foods', icon: Carrot },
     { id: 'skin', label: 'Skin', icon: Sun },
+    { id: 'massage', label: 'Massage', icon: Hand },
   ];
 
   const renderContent = () => {
@@ -127,6 +128,10 @@ export default function StrandPlanApp() {
         // This will be handled by navigation, but as a fallback:
         window.location.href = '/skin';
         return null;
+      case 'massage':
+        // This will be handled by navigation, but as a fallback:
+        window.location.href = '/massage';
+        return null;
       default:
         return null;
     }
@@ -139,6 +144,8 @@ export default function StrandPlanApp() {
       window.location.href = '/foods';
     } else if (tabId === 'skin') {
       window.location.href = '/skin';
+    } else if (tabId === 'massage') {
+      window.location.href = '/massage';
     } else {
       setActiveTab(tabId);
     }
@@ -192,7 +199,7 @@ export default function StrandPlanApp() {
               key={tab.id}
               variant="ghost"
               onClick={() => handleTabClick(tab.id)}
-              className={`flex flex-col items-center h-auto py-2 px-3 rounded-xl transition-all duration-300 w-1/7
+              className={`flex flex-col items-center h-auto py-2 px-3 rounded-xl transition-all duration-300 w-1/8
                 ${activeTab === tab.id 
                   ? 'bg-gradient-to-r from-primary/20 to-accent/20 text-primary font-bold' 
                   : 'text-muted-foreground hover:bg-secondary'
